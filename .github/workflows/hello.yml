@@ -1,0 +1,18 @@
+# .github/workflows/hello.yml
+
+on:
+  push: 
+    branches: [main]
+
+jobs:
+  greet: 
+    runs-in: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Hello from Github Actions"
+      
+      - name: Show the date
+        run: date
+      
+      - name: list all files
+        run: ls -la
