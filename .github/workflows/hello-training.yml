@@ -8,4 +8,11 @@ jobs:
   hello: 
     runs-on: ubuntu-latest
     steps:
-      run: echo " Hello from Github Actions"
+      - name: Hello 
+        run: echo " Hello from Github Actions"
+      
+      - name: list the files
+        run: ls -la
+      
+      - name: print the date
+        run: date
