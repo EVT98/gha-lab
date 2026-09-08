@@ -1,7 +1,7 @@
 name: Simple Nodejs app
 
 on:
-  pull_request:
+  push:
     branches: [training]
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version:22
+          node-version: '22'
 
       - name: Install the depedencies
         run: npm ci
