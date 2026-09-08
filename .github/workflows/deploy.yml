@@ -18,6 +18,7 @@ jobs:
     needs: staging
     runs-on: ubuntu-latest
     environment: production
+    steps: 
       - name: Deploy to production
         run: echo " Deploying in $DEPLOY_TARGET"
         env:
