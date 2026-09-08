@@ -5,9 +5,15 @@ on:
   push:
     branches: [main]
 
+permissions: 
+  id-token: write
+  contents: read
+
 jobs:
-  oidc:
+  deploy:
     runs-on: ubuntu-latest
+    steps:
+    
     - uses: actions/checkout@v4
 
     - name: Assume AWS role via OIDC
