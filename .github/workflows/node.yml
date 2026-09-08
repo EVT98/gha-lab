@@ -16,10 +16,10 @@ jobs:
           node-version:22
 
       - name: Install the depedencies
-          run: npm ci
+        run: npm ci
 
       - name: lint
-          run: npx eslint .
+        run: npx eslint .
 
       - name: test
-          run: node --test
+        run: node --test
