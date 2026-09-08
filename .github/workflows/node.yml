@@ -1,0 +1,25 @@
+name: Simple Nodejs app
+
+on:
+  pull_request:
+    branches: [training]
+
+jobs:
+  app:
+    runs-on: ubuntu-latest
+    steps: 
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version:22
+
+      - name: Install the depedencies
+          run: npm ci
+
+      - name: lint
+          run: npx eslint .
+
+      - name: test
+          run: node --test
