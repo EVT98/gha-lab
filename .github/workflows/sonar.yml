@@ -22,6 +22,6 @@ jobs:
       
     - name: Quality Gates verification
       uses: SonarSource/sonarqube-quality-gate-action@v1
-      timeout_minutes: 5
+      timeout-minutes: 5
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
