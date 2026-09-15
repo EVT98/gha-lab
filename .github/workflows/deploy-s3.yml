@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Assume AWS role via OIDC
-      uses: aws-actions/configure-aws-credentials@v4
+      uses: aws-actions/configure-aws-credentials@ff717079ee2060e4bcee96c4779b553acc87447c
       with:
         role-to-assume: arn:aws:iam::211125431540:role/GitHubActions-S3-Deploy
         aws-region: us-east-1
