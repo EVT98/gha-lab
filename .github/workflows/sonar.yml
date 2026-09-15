@@ -6,21 +6,21 @@ on:
   push:
     branches: [main]
 
-  jobs:
-    sonar:
-      runs-on: ubuntu-latest
-      steps: 
+jobs:
+  sonar:
+    runs-on: ubuntu-latest
+    steps: 
 
-      - uses: actions/checkout@v4
-        fetch-depth: 0
+    - uses: actions/checkout@v4
+      fetch-depth: 0
 
-      - name: Sonar analysis
-        uses: SonarSource/sonarqube-scan-action@v6
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
+    - name: Sonar analysis
+      uses: SonarSource/sonarqube-scan-action@v6
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
       
-      - name: Quality Gates verification
-        uses: SonarSource/sonarqube-quality-gate-action@v1
-        timeout_minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    - name: Quality Gates verification
+      uses: SonarSource/sonarqube-quality-gate-action@v1
+      timeout_minutes: 5
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
