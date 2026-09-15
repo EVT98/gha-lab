@@ -17,7 +17,7 @@ on:
       - name: Sonar analysis
         uses: SonarSource/sonarqube-scan-action@v6
         env:
-          SONAR_TOKEN: ${{ SONAR_TOKEN }} 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
       
       - name: Quality Gates verification
         uses: SonarSource/sonarqube-quality-gate-action@v1
